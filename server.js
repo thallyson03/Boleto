@@ -38,7 +38,7 @@ app.post('/baixar-boleto', async (req, res) => {
     fs.writeFileSync(filePath, response.data);
 
     // Gera o link de acesso (localhost para testes)
-    const fileUrl = `http://localhost:3000/${encodeURIComponent(filename)}`;
+    const fileUrl = `https://boleto-cybn.onrender.com//${encodeURIComponent(filename)}`;
 
     // Retorna o link para o Typebot usar
     res.json({ link: fileUrl });
